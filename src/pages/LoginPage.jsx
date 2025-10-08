@@ -27,7 +27,7 @@ const LoginPage = () => {
     try {
       if (isSignUp) {
         // Use provided backend contract: POST /users/insert returns "200::<msg>" on success
-        const signupResp = await fetch("http://localhost:1010/users/insert", {
+        const signupResp = await fetch("http://localhost:8080/users/insert", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -47,7 +47,7 @@ const LoginPage = () => {
         }
       } else {
         // Use provided backend contract: POST /users/signin returns "200::<token>"
-        const loginResp = await fetch("http://localhost:1010/users/signin", {
+        const loginResp = await fetch("http://localhost:8080/users/signin", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -63,7 +63,7 @@ const LoginPage = () => {
           localStorage.setItem("authToken", token);
           // Fetch username per provided flow
           try {
-            const usernameResp = await fetch("http://localhost:1010/users/getusername", {
+            const usernameResp = await fetch("http://localhost:8080/users/getusername", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({ csrid: token }),

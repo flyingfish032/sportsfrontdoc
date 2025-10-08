@@ -101,10 +101,10 @@ const TeamsPage = () => {
     const [editingName, setEditingName] = useState("");
 
     useEffect(() => {
-        axios.get("http://localhost:1010/api/teams")
+        axios.get("http://localhost:8080/api/teams")
             .then((response) => setTeams(response.data))
             .catch((error) => console.error("Error fetching teams:", error));
-        axios.get("http://localhost:1010/api/players")
+        axios.get("http://localhost:8080/api/players")
             .then((response) => setPlayers(response.data))
             .catch((error) => console.error("Error fetching players:", error));
     }, []);
@@ -134,7 +134,7 @@ const TeamsPage = () => {
             name: newTeam,
             players: [{ name: selectedPlayer }],
         };
-        axios.post("http://localhost:1010/api/teams", teamData)
+        axios.post("http://localhost:8080/api/teams", teamData)
             .then((response) => {
                 setTeams([...teams, response.data]);
                 setNewTeam("");
@@ -144,7 +144,7 @@ const TeamsPage = () => {
     };
 
     const deleteTeam = (id) => {
-        axios.delete(`http://localhost:1010/api/teams/${id}`)
+        axios.delete(`http://localhost:8080/api/teams/${id}`)
             .then(() => {
                 setTeams(teams.filter((team) => team.id !== id));
             })
@@ -158,7 +158,7 @@ const TeamsPage = () => {
 
     const saveEdit = () => {
         const updatedTeam = { ...teams[editingIndex], name: editingName };
-        axios.put(`http://localhost:1010/api/teams/${updatedTeam.id}`, updatedTeam)
+        axios.put(`http://localhost:8080/api/teams/${updatedTeam.id}`, updatedTeam)
             .then((response) => {
                 const updatedTeams = [...teams];
                 updatedTeams[editingIndex] = response.data;

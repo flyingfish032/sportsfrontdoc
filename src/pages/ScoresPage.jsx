@@ -100,7 +100,7 @@ const ScoresPage = () => {
     const [snackbar, setSnackbar] = useState({ open: false, message: "", severity: "success" });
     
     // NOTE: Using placeholder API endpoints. Replace with your actual endpoints.
-    const API_BASE_URL = "http://localhost:1010/api/livescore";
+    const API_BASE_URL = "http://localhost:8080/api/livescore";
 
     useEffect(() => {
         fetchMatches();

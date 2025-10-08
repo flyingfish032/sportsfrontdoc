@@ -124,8 +124,8 @@ const PlayersPage = () => {
         const fetchAllData = async () => {
             try {
                 const [playersRes, teamsRes] = await Promise.all([
-                    axios.get(`http://localhost:1010/api/players`),
-                    axios.get(`http://localhost:1010/api/teams`)
+                    axios.get(`http://localhost:8080/api/players`),
+                    axios.get(`http://localhost:8080/api/teams`)
                 ]);
                 setPlayers(playersRes.data);
                 setTeams(teamsRes.data);
@@ -156,13 +156,13 @@ const PlayersPage = () => {
         const playerToSave = { ...currentPlayer, team: teamObject || null };
         try {
             if (isEditing) {
-                await axios.put(`http://localhost:1010/api/players/${currentPlayer.id}`, playerToSave);
+                await axios.put(`http://localhost:8080/api/players/${currentPlayer.id}`, playerToSave);
                 setSuccessMessage("Player updated successfully!");
             } else {
-                await axios.post(`http://localhost:1010/api/players`, playerToSave);
+                await axios.post(`http://localhost:8080/api/players`, playerToSave);
                 setSuccessMessage("Player added successfully!");
             }
-            const response = await axios.get(`http://localhost:1010/api/players`);
+            const response = await axios.get(`http://localhost:8080/api/players`);
             setPlayers(response.data);
             handleCloseDialog();
         } catch (err) {
@@ -172,7 +172,7 @@ const PlayersPage = () => {
 
     const handleDeletePlayer = async (id) => {
         try {
-            await axios.delete(`http://localhost:1010/api/players/${id}`);
+            await axios.delete(`http://localhost:8080/api/players/${id}`);
             setSuccessMessage("Player deleted successfully!");
             setPlayers(players.filter(p => p.id !== id));
         } catch (err) {

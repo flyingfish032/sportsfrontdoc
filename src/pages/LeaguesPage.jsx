@@ -28,20 +28,20 @@ const LeaguesPage = () => {
     const [currentLeague, setCurrentLeague] = useState({ id: null, name: '', location: '' });
 
     const fetchLeagues = async () => {
-        const response = await axios.get('http://localhost:1010/api/leagues');
+        const response = await axios.get('http://localhost:8080/api/leagues');
         setLeagues(response.data);
     };
 
     const handleDelete = async (id) => {
-        await axios.delete(`http://localhost:1010/api/leagues/${id}`);
+        await axios.delete(`http://localhost:8080/api/leagues/${id}`);
         fetchLeagues();
     };
 
     const handleSave = async () => {
         if (currentLeague.id) {
-            await axios.put(`http://localhost:1010/api/leagues/${currentLeague.id}`, currentLeague);
+            await axios.put(`http://localhost:8080/api/leagues/${currentLeague.id}`, currentLeague);
         } else {
-            await axios.post('http://localhost:1010/api/leagues', currentLeague);
+            await axios.post('http://localhost:8080/api/leagues', currentLeague);
         }
         setOpen(false);
         fetchLeagues();
