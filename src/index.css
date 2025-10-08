@@ -1,0 +1,132 @@
+:root {
+  /* === Base Typography === */
+  font-family: "Poppins", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+
+  /* === Color System === */
+  --primary-gradient: linear-gradient(135deg, #6a11cb, #2575fc);
+  --bg-dark: #0f172a;
+  --text-light: rgba(255, 255, 255, 0.9);
+  --glass-bg: rgba(255, 255, 255, 0.08);
+  --border-light: rgba(255, 255, 255, 0.15);
+
+  color-scheme: dark light;
+  color: var(--text-light);
+  background-color: var(--bg-dark);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* === Global Layout === */
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
+  color: var(--text-light);
+  overflow-x: hidden;
+}
+
+/* === Links === */
+a {
+  font-weight: 500;
+  color: #8ab4f8;
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+a:hover {
+  color: #b4c6ff;
+  text-shadow: 0 0 8px rgba(100, 108, 255, 0.6);
+}
+
+/* === Headings === */
+h1, h2, h3, h4, h5 {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+h1 {
+  font-size: 3rem;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  margin-bottom: 1.2rem;
+}
+
+/* === Buttons === */
+button {
+  border-radius: 10px;
+  border: none;
+  padding: 0.8em 1.6em;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: inherit;
+  background: var(--primary-gradient);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(37, 117, 252, 0.4);
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(37, 117, 252, 0.6);
+}
+
+button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* === Containers & Utility === */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.glass-box {
+  background: var(--glass-bg);
+  border: 1px solid var(--border-light);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* === Light Mode === */
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-dark: #f9fafb;
+    --text-light: #1e293b;
+    --glass-bg: rgba(255, 255, 255, 0.5);
+    --border-light: rgba(0, 0, 0, 0.1);
+  }
+
+  body {
+    background: linear-gradient(135deg, #e0e7ff, #f3e8ff);
+    color: var(--text-light);
+  }
+
+  a {
+    color: #4756ff;
+  }
+
+  a:hover {
+    color: #6a11cb;
+    text-shadow: none;
+  }
+
+  button {
+    background: var(--primary-gradient);
+    color: #fff;
+  }
+}

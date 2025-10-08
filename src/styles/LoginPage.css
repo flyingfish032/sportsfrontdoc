@@ -1,0 +1,116 @@
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #1f1c2c, #928dab);
+    font-family: "Poppins", sans-serif;
+    overflow: hidden;
+  }
+  
+  .auth-form {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    color: #fff;
+    transition: transform 0.3s ease;
+  }
+  
+  .auth-form:hover {
+    transform: translateY(-5px);
+  }
+  
+  .auth-title {
+    font-size: 2rem;
+    margin-bottom: 1.8rem;
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+  }
+  
+  .form-group {
+    margin-bottom: 1.2rem;
+    text-align: left;
+  }
+  
+  label {
+    display: block;
+    font-size: 0.9rem;
+    color: #d1d1d1;
+    margin-bottom: 0.5rem;
+  }
+  
+  input {
+    width: 100%;
+    padding: 0.9rem;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+  }
+  
+  input::placeholder {
+    color: #ccc;
+  }
+  
+  input:focus {
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid #6a11cb;
+    box-shadow: 0 0 6px rgba(106, 17, 203, 0.4);
+  }
+  
+  .btn {
+    width: 100%;
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    color: #fff;
+    padding: 0.9rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+  }
+  
+  .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(37, 117, 252, 0.4);
+  }
+  
+  .error-text {
+    background: rgba(255, 0, 0, 0.2);
+    color: #ffbaba;
+    padding: 0.7rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .toggle-text {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: #ddd;
+  }
+  
+  .toggle-link {
+    color: #6a11cb;
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: underline;
+  }
+  
+  .toggle-link:hover {
+    color: #2575fc;
+  }
+  
